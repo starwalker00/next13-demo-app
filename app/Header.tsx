@@ -1,11 +1,12 @@
 'use client';
+import { Container } from '@chakra-ui/react'
 
 export default function Header() {
     return (
-        <header>
+        <Container as="header" centerContent>
             <h1>
                 HEADER
             </h1>
-        </header>
+        </Container >
     );
 }

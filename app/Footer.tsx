@@ -1,11 +1,12 @@
 'use client';
+import { Container } from '@chakra-ui/react'
 
 export default function Footer() {
     return (
-        <footer>
+        <Container as="footer" centerContent>
             <h1>
-                FOOTER
+                HEADER
             </h1>
-        </footer>
+        </Container >
     );
 }
