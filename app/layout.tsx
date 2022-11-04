@@ -1,4 +1,9 @@
+// Root layout (app/layout.js)
+// - Applies to all routes
 import './globals.css'
+
+import Header from './Header';
+import Footer from './Footer';
 
 export default function RootLayout({
   children,
@@ -12,7 +17,13 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>{children}</body>
+      <body>
+        <Header />
+        <main>
+          {children}
+        </main>
+        <Footer />
+      </body>
     </html>
   )
 }
