@@ -1,10 +1,13 @@
 import Image from 'next/image'
 import styles from './page.module.css'
+import { BearCounter, Controls } from './Store'
 
 export default function Home() {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
+        <p><BearCounter></BearCounter></p>
+        <p><Controls></Controls></p>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js 13!</a>
         </h1>
