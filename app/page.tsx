@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import styles from './page.module.css'
 import { BearCounter, Controls } from './Store'
+import { PersistentBearCounter, PersistentControls } from './Store'
 
 export default function Home() {
   return (
@@ -8,6 +9,8 @@ export default function Home() {
       <main className={styles.main}>
         <p><BearCounter></BearCounter></p>
         <p><Controls></Controls></p>
+        <p><PersistentBearCounter></PersistentBearCounter></p>
+        <p><PersistentControls></PersistentControls></p>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js 13!</a>
         </h1>
@@ -19,7 +22,7 @@ export default function Home() {
 
         <div className={styles.grid}>
           <a href="https://beta.nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
+            <h2>Documentation &rarr; </h2>
             <p>Find in-depth information about Next.js 13</p>
           </a>
 
@@ -27,7 +30,7 @@ export default function Home() {
             href="https://github.com/vercel/next.js/tree/canary/examples"
             className={styles.card}
           >
-            <h2>Examples &rarr;</h2>
+            <h2>Examples &rarr; </h2>
             <p>Explore the Next.js 13 playground.</p>
           </a>
 
@@ -37,7 +40,7 @@ export default function Home() {
             rel="noopener noreferrer"
             className={styles.card}
           >
-            <h2>Deploy &rarr;</h2>
+            <h2>Deploy &rarr; </h2>
             <p>Deploy your Next.js site to a public URL with Vercel.</p>
           </a>
         </div>
