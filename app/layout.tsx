@@ -4,6 +4,7 @@ import './globals.css'
 
 import { Providers } from './providers';
 
+import Navbar from './Navbar';
 import Header from './Header';
 import Footer from './Footer';
 
@@ -21,6 +22,7 @@ export default function RootLayout({
       <head />
       <body>
         <Providers>
+          <Navbar />
           <Header />
           {children}
           <Footer />

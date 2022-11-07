@@ -6,7 +6,7 @@ export default function Footer() {
     return (
         <Container as="footer" centerContent>
             <h1>
-                HEADER
+                FOOTER
             </h1>
         </Container >
     );
