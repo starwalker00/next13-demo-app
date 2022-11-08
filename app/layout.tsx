@@ -1,3 +1,4 @@
+'use client';
 // Root layout (app/layout.js)
 // - Applies to all routes
 import './globals.css'
@@ -7,6 +8,7 @@ import { Providers } from './providers';
 import Navbar from './Navbar';
 import Header from './Header';
 import Footer from './Footer';
+import ConnectWallet from './ConnectWallet';
 
 export default function RootLayout({
   children,
@@ -24,6 +26,7 @@ export default function RootLayout({
         <Providers>
           <Navbar />
           <Header />
+          <ConnectWallet />
           {children}
           <Footer />
         </Providers>
