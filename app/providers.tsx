@@ -5,8 +5,10 @@ import { ChakraProvider } from '@chakra-ui/react'
 import { theme } from './theme.js';
 
 // web3modal
-import { Web3Modal } from '@web3modal/react'
-import { chains, providers } from '@web3modal/ethereum'
+import { Web3Modal } from '@web3modal/react';
+import { chains, providers } from '@web3modal/ethereum';
+if (!process.env.NEXT_PUBLIC_PROJECT_ID)
+    throw new Error('You need to provide NEXT_PUBLIC_PROJECT_ID env variable')
 const modalConfig = {
     projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
     theme: 'dark' as const,
