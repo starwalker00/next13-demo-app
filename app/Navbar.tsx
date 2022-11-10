@@ -12,6 +12,7 @@ import {
     Stack
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
+import { NextLogoIcon } from './NextLogoIcon';
 
 type Item = {
     name: string;
@@ -57,7 +58,7 @@ export default function Navbar() {
                         onClick={isOpen ? onClose : onOpen}
                     />
                     <HStack spacing={8} alignItems={'center'}>
-                        <Box>Logo</Box>
+                        <Box><NextLogoIcon /></Box>
                         <HStack
                             as={'nav'}
                             spacing={4}
