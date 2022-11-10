@@ -12,7 +12,36 @@ import {
     Stack
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
-import { PersistentBearCounter, PersistentControls } from './Store'
+
+type Item = {
+    name: string;
+    slug: string;
+    description?: string;
+};
+
+const navItems: Item[] =
+    [
+        {
+            name: 'Home',
+            slug: '/',
+            description: '',
+        },
+        // {
+        //     name: 'ExplorerProfile',
+        //     slug: '/explorer/profiles',
+        //     description: '',
+        // },
+        // {
+        //     name: 'ExplorerPublications',
+        //     slug: '/explorer/publications',
+        //     description: '',
+        // },
+        {
+            name: 'About',
+            slug: '/about',
+            description: '',
+        }
+    ];
 
 export default function Navbar() {
     const { isOpen, onOpen, onClose } = useDisclosure();
@@ -33,20 +62,11 @@ export default function Navbar() {
                             as={'nav'}
                             spacing={4}
                             display={{ base: 'none', md: 'flex' }}>
-                            <NextLink href='/' passHref>
-                                <Link>Home</Link>
-                            </NextLink>
-                            {/* <NextLink href='/explorer/profiles' passHref>
-                                <Link>ExplorerProfile</Link>
-                            </NextLink>
-                            <NextLink href='/explorer/publications' passHref>
-                                <Link>ExplorerPublications</Link>
-                            </NextLink> */}
-                            <NextLink href='/about' passHref>
-                                <Link>About</Link>
-                            </NextLink>
-                            <PersistentBearCounter></PersistentBearCounter>
-                            <PersistentControls></PersistentControls>
+                            {navItems.map((item) => {
+                                return (
+                                    <NavItem item={item} />
+                                );
+                            })}
                         </HStack>
                     </HStack>
                 </Flex>
@@ -54,16 +74,23 @@ export default function Navbar() {
                 {isOpen ? (
                     <Box pb={4} display={{ md: 'none' }}>
                         <Stack as={'nav'} spacing={4}>
-                            <NextLink href='/' passHref>
-                                <Link>Home</Link>
-                            </NextLink>
-                            <NextLink href='/about' passHref>
-                                <Link>About</Link>
-                            </NextLink>
+                            {navItems.map((item) => {
+                                return (
+                                    <NavItem item={item} />
+                                );
+                            })}
                         </Stack>
                     </Box>
                 ) : null}
             </Box>
         </>
+    );
+}
+
+function NavItem({ item }: { item: Item }) {
+    return (
+        <NextLink href={item.slug} legacyBehavior passHref>
+            <Link>{item.name}</Link>
+        </NextLink>
     );
 }
