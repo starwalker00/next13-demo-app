@@ -9,6 +9,7 @@ import Navbar from './Navbar';
 import Header from './Header';
 import Footer from './Footer';
 import ConnectWallet from './ConnectWallet';
+import SignSection from './SignSection';
 
 export default function RootLayout({
   children,
@@ -27,6 +28,7 @@ export default function RootLayout({
           <Navbar />
           <Header />
           <ConnectWallet />
+          <SignSection />
           {children}
           <Footer />
         </Providers>
