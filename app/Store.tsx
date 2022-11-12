@@ -5,7 +5,7 @@ import { usePersistentBearStore } from './store.js'
 
 export function BearCounter() {
     const bears = useBearStore((state) => state.bears)
-    return <h1>{bears} around here ...</h1>
+    return <span>{bears} around here ...</span>
 }
 
 export function Controls() {
@@ -15,7 +15,7 @@ export function Controls() {
 
 export function PersistentBearCounter() {
     const bears = usePersistentBearStore((state) => state.bears)
-    return <h1>{bears} persistents around here ...</h1>
+    return <span>{bears} persistents around here ...</span>
 }
 
 export function PersistentControls() {
