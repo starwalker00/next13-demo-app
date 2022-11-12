@@ -65,7 +65,7 @@ export default function Navbar() {
                             display={{ base: 'none', md: 'flex' }}>
                             {navItems.map((item) => {
                                 return (
-                                    <NavItem item={item} />
+                                    <NavItem key={item.slug} item={item} />
                                 );
                             })}
                         </HStack>
@@ -77,7 +77,7 @@ export default function Navbar() {
                         <Stack as={'nav'} spacing={4}>
                             {navItems.map((item) => {
                                 return (
-                                    <NavItem item={item} />
+                                    <NavItem key={item.slug} item={item} />
                                 );
                             })}
                         </Stack>
