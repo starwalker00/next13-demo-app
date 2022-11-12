@@ -13,6 +13,10 @@ import '@rainbow-me/rainbowkit/styles.css';
 import { RainbowKitProvider } from '@rainbow-me/rainbowkit';
 import { chains } from './(config)/web3';
 
+// apollo
+import { ApolloProvider } from '@apollo/client';
+import { apolloClient } from '../core/apollo/apollo-client';
+
 export function Providers({
     children,
 }: {
@@ -22,9 +26,11 @@ export function Providers({
         <>
             <WagmiConfig client={wagmiClient}>
                 <RainbowKitProvider chains={chains}>
-                    <ChakraProvider theme={theme}>
-                        {children}
-                    </ChakraProvider>
+                    <ApolloProvider client={apolloClient}>
+                        <ChakraProvider theme={theme}>
+                            {children}
+                        </ChakraProvider>
+                    </ApolloProvider>
                 </RainbowKitProvider>
             </WagmiConfig>
 

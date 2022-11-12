@@ -10,6 +10,7 @@ import Header from './Header';
 import Footer from './Footer';
 import ConnectWallet from './ConnectWallet';
 import SignSection from './SignSection';
+import Auth from './Auth';
 
 export default function RootLayout({
   children,
@@ -27,8 +28,9 @@ export default function RootLayout({
         <Providers>
           <Navbar />
           <Header />
-          <ConnectWallet />
+          {/* <ConnectWallet /> */}
           <SignSection />
+          <Auth />
           {children}
           <Footer />
         </Providers>
