@@ -1,10 +1,10 @@
 import { makeVar } from "@apollo/client";
 
 export interface LoginData {
-    address?: string;
+    address?: string | undefined
     tokens?: {
-        accessToken: string;
-        refreshToken: string;
+        accessToken: string | undefined;
+        refreshToken: string | undefined;
     }
 }
 
